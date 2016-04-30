@@ -9,14 +9,13 @@ import gasm.core.enums.SystemType;
  * ...
  * @author Leo Bergman
  */
-using gasm.core.utils.BitUtils;
 
 class HeapsSoundSystem extends System implements ISystem
 {
 	public function new() 
 	{
-		type = type.add(SystemType.SOUND);
-		componentFlags = componentFlags.add(Sound);
+		type = SystemType.SOUND;
+		componentFlags.set(ComponentType.Sound);
 	}
 	
 	public function update(comp:Component, delta:Float) 

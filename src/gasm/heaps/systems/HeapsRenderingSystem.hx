@@ -16,7 +16,6 @@ import gasm.heaps.components.HeapsTextComponent;
  * ...
  * @author Leo Bergman
  */
-using gasm.core.utils.BitUtils;
 
 class HeapsRenderingSystem extends System implements ISystem
 {
@@ -25,8 +24,9 @@ class HeapsRenderingSystem extends System implements ISystem
 	public function new(root:Scene)
 	{
 		this.root = root;
-		type = type.add(SystemType.RENDERING);
-		componentFlags = componentFlags.add(Graphics).add(Text);
+		type = SystemType.RENDERING;
+		componentFlags.set(Graphics);
+		componentFlags.set(Text);
 	}
 	
 	public function update(comp:Component, delta:Float) 
